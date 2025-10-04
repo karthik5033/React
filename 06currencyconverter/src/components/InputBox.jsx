@@ -25,6 +25,21 @@ function InputBox({
             onChange={(e) =>onAmountChange && onAmountChange(Number(e.target.value))}
           />
       </div>
+      <div className="w-1/2 flex flex-wrap justify-end text-right">
+            <p className="text-black/40 mb-2 w-full"> Currency type</p>
+            <select
+              className="outline-none w-full bg-transparent py-1.5"
+              value={selectedCurrnecy}
+              disabled={currencyDisabled}
+              onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
+            >
+              {currencyOptions.map((option) => (
+                <option key={option}  value={option}>
+                  {option}
+                </option>
+              ))}
+            </select> 
+      </div>
     </div>
   );
 }
